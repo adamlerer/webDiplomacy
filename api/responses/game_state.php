@@ -182,6 +182,12 @@ class GameState {
 	public $variantID;
 
 	/**
+	 * Pot Type - (Winner-takes-all, Points-per-supply-center, Sum-of-squres, Unranked)
+	 * @var int
+	 */
+	public $potType;
+
+	/**
 	 * Turn
 	 * @var int
 	 */
@@ -241,10 +247,11 @@ class GameState {
 		global $DB;
 
 		// Loading game state
-		$gameRow = $DB->sql_hash("SELECT id, variantID, turn, phase, gameOver FROM wD_Games WHERE id=".$this->gameID);
+		$gameRow = $DB->sql_hash("SELECT id, variantID, potType, turn, phase, gameOver FROM wD_Games WHERE id=".$this->gameID);
 		if ( ! $gameRow )
 			throw new \Exception("Unknown game ID.");
 		$this->variantID = intval($gameRow['variantID']);
+		$this->potType = $gameRow['potType'];
 		$this->turn = intval($gameRow['turn']);
 		$this->phase = $gameRow['phase'];
 		$this->gameOver = $gameRow['gameOver'];
