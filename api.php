@@ -85,7 +85,7 @@ class RequestException extends Exception {
  */
 function handleAPIError($message, $errorCode) {
 	header('Content-Type: text/plain');
-	http_response_code($errorCode);
+	# http_response_code($errorCode);
 	print $message;
 }
 
