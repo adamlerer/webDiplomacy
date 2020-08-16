@@ -207,7 +207,7 @@ class GameState {
 	public $gameOver;
 
 	/**
-	 * pressType - NoPress, Press, PublicPress
+	 * pressType - Regular, NoPress, PublicPress
 	 * @var string
 	 */
 	public $pressType;
