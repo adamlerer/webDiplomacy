@@ -112,13 +112,13 @@ class Members
 				$botSC = $Member->supplyCenterNo;
 
 				//This loop checks to see if the bot is winning or tied for the lead, since it will not vote draw or cancel in these cases
-				foreach($this->ByStatus['Playing'] as $CurMember) 
-				{
-					if ($botSC < $CurMember->supplyCenterNo)
-					{
-						$botVotes = array('Draw','Pause','Cancel');
-					}
-				}
+				// foreach($this->ByStatus['Playing'] as $CurMember) 
+				// {
+				// 	if ($botSC < $CurMember->supplyCenterNo)
+				// 	{
+				// 		$botVotes = array('Draw','Pause','Cancel');
+				// 	}
+				// }
 
 				//This variable and the following query get the SC count for 2 years ago, which will be used to prevent bot stalemates
 				$oldSC = 0; 
